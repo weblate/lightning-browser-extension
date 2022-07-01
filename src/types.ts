@@ -256,24 +256,24 @@ export interface IBadge {
 }
 
 export type Transaction = {
-  type?: string;
-  id: string;
-  createdAt: string;
-  name: string;
-  host: string;
-  title: string | React.ReactNode;
-  subTitle: string | React.ReactNode;
+  amount?: string;
+  badges?: IBadge[];
+  createdAt?: string;
+  currency?: string;
   date: string;
-  amount: string;
-  currency: string;
-  value: string;
+  description?: string;
+  host?: string;
+  id: string;
+  location?: string;
+  name?: string;
   preimage: string;
-  badges: IBadge[];
+  subTitle?: string | React.ReactNode;
+  title: string | React.ReactNode;
   totalAmount: string;
-  totalFees: string;
-  description: string;
-  location: string;
-  totalAmountFiat: string;
+  totalAmountFiat?: string;
+  totalFees?: string;
+  type?: "sent" | "sending" | "received";
+  value?: string;
 };
 
 export interface Payment {
