@@ -13,7 +13,7 @@ export default function injectScript() {
     scriptEl.setAttribute("type", "text/javascript");
     scriptEl.setAttribute(
       "src",
-      browser.extension.getURL("js/inpageScript.bundle.js")
+      browser.extension.getURL("js/inpageScript.bundle.js") // https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/#sunset-deprecated-apis
     );
     container.appendChild(scriptEl);
   } catch (err) {
