@@ -1,3 +1,4 @@
+import fetchAdapter from "@vespaiach/axios-fetch-adapter";
 import axios, { AxiosRequestConfig, Method } from "axios";
 import type { AxiosResponse } from "axios";
 import lightningPayReq from "bolt11";
@@ -294,6 +295,7 @@ export default class LndHub implements Connector {
       },
       {
         headers: defaultHeaders,
+        adapter: fetchAdapter,
       }
     );
 
@@ -330,6 +332,7 @@ export default class LndHub implements Connector {
         ...defaultHeaders,
         Authorization: `Bearer ${this.access_token}`,
       },
+      adapter: fetchAdapter,
     };
 
     if (method === "POST") {
